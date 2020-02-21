@@ -1,16 +1,21 @@
-name: Draw diagrams
+name: generate PlantUML Images
 on: push
 
 jobs:
   diagrams:
-    name: Draw diagrams
+    name: generate PlantUML Images
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: check out repository
         uses: actions/checkout@v2
-      - name: Process diagrams
+      - name: process diagrams
         uses: Timmy/plantuml-action@v1
         with:
-          args: '-tutxt activity-diagram.puml'
-      - name: Display diagrams
-        run: cat *.utxt
+          args: '-svg activity-diagram.puml'
+      - name: Save images
+      - name: commit files
+        run: |
+          git config --global user.email "workflow@example.com"
+          git config --global user.name "workflow user"
+          git add .
+          git commit -m 'generate PlantUML Images.'
