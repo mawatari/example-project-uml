@@ -16,8 +16,6 @@ jobs:
           args: '-svg activity-diagram.puml'
       - name: Commit files
         run: |
-          git config --global user.email "workflow@example.com"
-          git config --global user.name "workflow user"
           git add .
-          git commit -m 'generate PlantUML images.'
+          git commit -m 'Automatically generated PlantUML images.'
           git push origin
