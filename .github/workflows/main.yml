@@ -11,6 +11,6 @@ jobs:
       - name: Process diagrams
         uses: Timmy/plantuml-action@v1
         with:
-          args: '*.puml'
+          args: '-svg activity-diagram.puml'
       - name: Display diagrams
         run: echo success
