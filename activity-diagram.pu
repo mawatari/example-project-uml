@@ -1,5 +1,4 @@
 @startuml
-!include config/style.pu
 
 start
 if (condition AaaaA) then (yes)
