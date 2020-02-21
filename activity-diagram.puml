@@ -2,7 +2,7 @@
 !include config/style.puml
 
 start
-if (condition AaAaA) then (yes)
+if (condition A) then (yes)
   :Text 1;
 elseif (condition B) then (yes)
   :Text 2;
