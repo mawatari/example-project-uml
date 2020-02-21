@@ -1,18 +1,20 @@
-name: generate PlantUML images
+name: Generate PlantUML images
 on: push
 
 jobs:
   diagrams:
-    name: generate PlantUML images
+    name: Generate PlantUML images
     runs-on: ubuntu-latest
+    env:
+      REPO: https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
     steps:
-      - name: check out repository
+      - name: Check out repository
         uses: actions/checkout@v2
-      - name: process diagrams
+      - name: Process diagrams
         uses: Timmy/plantuml-action@v1
         with:
           args: '-svg activity-diagram.puml'
-      - name: commit files
+      - name: Commit files
         run: |
           git config --global user.email "workflow@example.com"
           git config --global user.name "workflow user"
