@@ -20,3 +20,4 @@ jobs:
           git config --global user.name "workflow user"
           git add .
           git commit -m 'generate PlantUML images.'
+          git push origin
