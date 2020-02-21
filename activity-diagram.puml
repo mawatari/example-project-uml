@@ -1,5 +1,5 @@
 @startuml
-!include ./config/color.puml
+!include config/color.puml
 start
 if (condition A) then (yes)
   :Text 1;
