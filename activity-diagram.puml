@@ -1,7 +1,7 @@
 @startuml
 skinparam monochrome true
 start
-if (condition A) then (yes)
+if (condition Aa) then (yes)
   :Text 1;
 elseif (condition B) then (yes)
   :Text 2;
