@@ -1,5 +1,6 @@
 @startuml
 !include config/color.puml
+skinparam monochrome true
 start
 if (condition A) then (yes)
   :Text 1;
