@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      REPO: https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
@@ -17,5 +16,7 @@ jobs:
           args: '-svg activity-diagram.puml'
       - name: Commit files
         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git commit -m 'Automatically generated PlantUML images.' -a
           git push origin
