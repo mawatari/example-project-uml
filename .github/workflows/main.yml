@@ -1,5 +1,9 @@
 name: Generate PlantUML images
-on: push
+on:
+  push:
+    branches:
+      - develop
+      - feature/**
 
 jobs:
   diagrams:
