@@ -1,2 +1,2 @@
-!define _PROJECT_NAME_ example project
-!define _PROJECT_OWNER_ mawatari
+!define PROJECT_NAME example project
+!define PROJECT_OWNER mawatari
