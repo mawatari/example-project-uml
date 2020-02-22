@@ -1,5 +1,5 @@
 @startuml
-!include config/autoload.puml
+!include config/autoload.iuml
 
 start
 if (condition A) then (yes)
