@@ -26,6 +26,7 @@ jobs:
         uses: Timmy/plantuml-action@5f5f57e
         with:
           args: '-svg ${{ steps.changed_files.outputs.list }}'
+        if: ${{ steps.changed_files.outputs.list }}
       - name: Commit files
         run: |
           git config --local user.email "github-actions@users.noreply.github.com"
