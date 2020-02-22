@@ -17,16 +17,19 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: Git rev-parse
-        run: echo `git rev-parse --short HEAD`
-      - name: Process diagrams
-        uses: Timmy/plantuml-action@v1
         with:
-          args: '-svg *.puml'
+          fetch-depth: unshallow
+      - name: Extract changed files
+        run: echo ::set-output name=list::$(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) | grep .puml)
+        id: changed_files
+      - name: Process diagrams
+        uses: Timmy/plantuml-action@5f5f57e
+        with:
+          args: '-svg ${{ steps.changed_files.outputs.list }}'
       - name: Commit files
         run: |
           git config --local user.email "github-actions@users.noreply.github.com"
           git config --local user.name "github-actions"
           git add .
           git commit -m 'Automatically generated PlantUML images.'
-          git push || true
+          git push || ture
