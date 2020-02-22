@@ -7,7 +7,7 @@ skinparam default {
   FontSize 14
 }
 skinparam Header {
-  FontColor #999999
+  FontColor #D7A72D
   FontSize 10
 }
 skinparam Footer {
