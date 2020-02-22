@@ -12,7 +12,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Write last modified
-        run: echo '!define _LAST_MODIFIED_ '`date` > config/last_modified.puml
+        run: echo '!define LAST_MODIFIED '`date` > config/last_modified.puml
       - name: Process diagrams
         uses: Timmy/plantuml-action@v1
         with:
