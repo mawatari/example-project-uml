@@ -1,1 +1,3 @@
 right header LastModified: _LAST_MODIFIED_
+right footer _PROJECT_OWNER_
+title _PROJECT_NAME_ %filename%
