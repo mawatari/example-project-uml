@@ -1,7 +1,5 @@
 @startuml
-!include config/style.puml
-!include config/last_modified.puml
-!include config/layout.puml
+!include config/*.puml
 
 start
 if (condition A) then (yes)
