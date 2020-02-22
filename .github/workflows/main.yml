@@ -20,12 +20,14 @@ jobs:
       - name: Git rev-parse
         run: |
           echo `git rev-parse --short HEAD`
+      - name: Process diagrams
+        uses: Timmy/plantuml-action@v1
+        with:
+          args: '-svg *.puml'
       - name: Commit files
         run: |
           git config --local user.email "github-actions@users.noreply.github.com"
           git config --local user.name "github-actions"
           git add .
           git commit -m 'Automatically generated PlantUML images.'
-      - name: Push files
-        if: success()
-        run: git push
+          git push || ture
