@@ -1,0 +1,3 @@
+!include project.puml
+!include style.puml
+!include layout.puml
