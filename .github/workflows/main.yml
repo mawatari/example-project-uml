@@ -4,8 +4,8 @@ on:
     branches:
       - develop
       - feature/**
-    tags:
-      - ''
+    tags-ignore:
+      - '*'
 
 jobs:
   diagrams:
@@ -17,6 +17,8 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check out repository
         uses: actions/checkout@v2
+      - name: Git rev-parse
+        run: echo `git rev-parse --short HEAD`
       - name: Process diagrams
         uses: Timmy/plantuml-action@v1
         with:
@@ -27,4 +29,4 @@ jobs:
           git config --local user.name "github-actions"
           git add .
           git commit -m 'Automatically generated PlantUML images.'
-          git push origin
+          git push || true
