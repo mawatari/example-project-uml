@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: unshallow
       - name: Extract changed files
-        run: git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)
+        run: git diff --stat --name-only 41e832c b998a1b | grep .puml
         id: changed_files
       - name: Git rev-parse
         run: |
