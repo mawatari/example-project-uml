@@ -34,6 +34,8 @@ jobs:
           echo ${{  github.action  }}
           echo `git log -5`
           git log -3 --pretty=%h
+          git show HEAD
+          git show HEAD^
           echo `git log --committer="Naoto Mawatari" -1 --pretty=%h`
           echo `git log --committer="github-actions" -1 --pretty=%h`
           echo `git log --author="github-actions" -1 --pretty=%h`
