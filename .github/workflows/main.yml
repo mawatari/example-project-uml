@@ -33,4 +33,5 @@ jobs:
           git config --local user.name "github-actions"
           git add .
           git commit -m 'Automatically generated PlantUML images.'
-          git push || ture
+          git push
+        if: steps.changed_files.outputs.list
