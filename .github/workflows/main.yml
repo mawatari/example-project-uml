@@ -33,6 +33,8 @@ jobs:
           echo ${{  github.workspace  }}
           echo ${{  github.action  }}
           echo `git log --committer="github-actions" -1 --pretty=%h`
+          echo `git log --author="github-actions" -1 --pretty=%h`
+          echo `git log -1 --pretty=%h`
           echo `git rev-parse --short HEAD`
           echo `git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)`
       - name: Process diagrams
