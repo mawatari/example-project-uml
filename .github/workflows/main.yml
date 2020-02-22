@@ -38,7 +38,7 @@ jobs:
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
         with:
-          args: '-svg `git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)`'
+          args: '-svg *.puml'
       - name: Commit files
         run: |
           git config --local user.email "github-actions@users.noreply.github.com"
