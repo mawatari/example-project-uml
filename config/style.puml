@@ -1,1 +1,27 @@
-skinparam monochrome true
+skinparam {
+  BoxPadding 5
+  ParticipantPadding 10
+}
+skinparam default {
+  FontColor #555555
+  FontSize 14
+}
+
+skinparam note {
+	FontStyle bold
+	FontColor #ffffff
+	BackgroundColor #7f8c8d
+	BorderColor #7f8c8d
+}
+
+skinparam activity {
+	ArrowColor #000000
+	BackgroundColor #eeeeee
+	BorderColor #999999
+	StartColor #000000
+	EndColor #000000
+	BarColor #000000
+
+  DiamondBackgroundColor #eeeeee
+  DiamondBorderColor #999999
+}
