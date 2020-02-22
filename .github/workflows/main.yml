@@ -21,7 +21,7 @@ jobs:
         run: |
           echo `git rev-parse --short HEAD`
       - name: Process diagrams
-        uses: Timmy/plantuml-action@v1
+        uses: Timmy/plantuml-action@5f5f57e
         with:
           args: '-svg *.puml'
       - name: Commit files
