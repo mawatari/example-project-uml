@@ -4,8 +4,8 @@ on:
     branches:
       - develop
       - feature/**
-    tags:
-      - ''
+    tags-ignore:
+      - '*'
 
 jobs:
   diagrams:
