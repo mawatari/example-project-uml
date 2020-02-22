@@ -20,10 +20,6 @@ jobs:
       - name: Git rev-parse
         run: |
           echo `git rev-parse --short HEAD`
-      - name: Process diagrams
-        uses: Timmy/plantuml-action@v1
-        with:
-          args: '-svg *.puml'
       - name: Commit files
         run: |
           git config --local user.email "github-actions@users.noreply.github.com"
