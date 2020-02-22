@@ -1,0 +1,6 @@
+!define PROJECT_NAME example project
+!define PROJECT_OWNER mawatari
+
+!include last_modified.puml
+!include layout.puml
+!include style.puml
