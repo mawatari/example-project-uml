@@ -6,6 +6,10 @@ skinparam default {
   FontColor #555555
   FontSize 14
 }
+skinparam Header {
+  FontColor #999999
+  FontSize 10
+}
 
 skinparam note {
 	FontStyle bold
