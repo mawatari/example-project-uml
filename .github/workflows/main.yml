@@ -32,6 +32,8 @@ jobs:
           echo ${{  github.ref  }}
           echo ${{  github.workspace  }}
           echo ${{  github.action  }}
+          echo `git log --committer="github-actions" -1 --pretty=%h`
+          echo `git rev-parse --short HEAD`
           echo `git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)`
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
