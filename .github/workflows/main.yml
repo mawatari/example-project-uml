@@ -14,7 +14,7 @@ jobs:
       - name: Process diagrams
         uses: Timmy/plantuml-action@v1
         with:
-          args: '-svg activity-diagram.puml'
+          args: '-svg *.puml'
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
