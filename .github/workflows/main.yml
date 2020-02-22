@@ -16,6 +16,7 @@ jobs:
           args: '-svg activity-diagram.puml'
       - name: Commit files
         run: |
-          git add .
-          git commit -m 'Automatically generated PlantUML images.'
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'Automatically generated PlantUML images.' -a
           git push origin
