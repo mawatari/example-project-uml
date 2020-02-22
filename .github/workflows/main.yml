@@ -21,7 +21,7 @@ jobs:
           fetch-depth: unshallow
       - name: Extract changed files
         run: git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)
-        id: files
+        id: changed_files
       - name: Git rev-parse
         run: |
           echo `git rev-parse --short HEAD`
@@ -38,7 +38,7 @@ jobs:
           echo ${{  github.workspace  }}
           echo ${{  github.action  }}
           echo `git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)`
-          echo ${{  step.files.outputs  }}
+          echo ${{  steps.changed_files.outputs  }}
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
         with:
