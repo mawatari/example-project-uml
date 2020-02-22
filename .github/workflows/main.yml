@@ -19,5 +19,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m 'Automatically generated PlantUML images.' -a
+          git add .
+          git commit -m 'Automatically generated PlantUML images.'
           git push origin
