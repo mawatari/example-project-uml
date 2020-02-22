@@ -12,6 +12,8 @@ jobs:
     name: Generate PlantUML images
     runs-on: ubuntu-latest
     steps:
+      - name: Git rev-parse
+        uses: echo `git rev-parse --short HEAD`
       - uses: actions/labeler@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
