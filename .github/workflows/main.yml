@@ -12,13 +12,13 @@ jobs:
     name: Generate PlantUML images
     runs-on: ubuntu-latest
     steps:
-      - name: Git rev-parse
-        run: echo `git rev-parse --short HEAD`
       - uses: actions/labeler@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check out repository
         uses: actions/checkout@v2
+      - name: Git rev-parse
+        run: echo `git rev-parse --short HEAD`
       - name: Process diagrams
         uses: Timmy/plantuml-action@v1
         with:
