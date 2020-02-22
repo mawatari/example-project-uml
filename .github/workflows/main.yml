@@ -17,6 +17,8 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check out repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: unshallow
       - name: Git rev-parse
         run: |
           echo `git rev-parse --short HEAD`
