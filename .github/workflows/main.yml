@@ -22,7 +22,7 @@ jobs:
       - name: tmp
         run: git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)
       - name: Extract changed files
-        run: echo hello
+        run: echo ::set-output name=list::$(git diff --stat --name-only 41e832c b998a1b | grep .puml)
         id: changed_files
       - name: Git rev-parse
         run: |
@@ -40,7 +40,7 @@ jobs:
           echo ${{  github.workspace  }}
           echo ${{  github.action  }}
           echo `git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD)`
-          echo ${{  steps.changed_files.outputs  }}
+          echo ${{  steps.changed_files.outputs.list  }}
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
         with:
