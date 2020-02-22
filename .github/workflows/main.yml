@@ -16,7 +16,7 @@ jobs:
         with:
           args: '-svg *.puml'
       - name: Write last modified
-        run: date >> config/last_modifeid.puml
+        run: date >> config/last_modified.puml
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
