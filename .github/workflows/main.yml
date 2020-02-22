@@ -20,6 +20,7 @@ jobs:
       - name: Git rev-parse
         run: |
           echo `git rev-parse --short HEAD`
+          echo ${{  github.sha  }}
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
         with:
