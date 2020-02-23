@@ -29,6 +29,7 @@ jobs:
           export LANGAGE
           export LC_ALL
           locale -a
+          locale
       - name: Extract the targets
         run: |
           echo ::set-output name=list::$(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) | grep -e .iuml -e .puml | xargs echo | awk '{if($0 ~ ".iuml"){print "**/*.puml"}else{print $0}}')
