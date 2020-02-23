@@ -21,7 +21,7 @@ jobs:
           fetch-depth: unshallow
       - name: Enable Japanese
         run: |
-          localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+          sudo localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
           locale -a
       - name: Extract the target
         run: echo ::set-output name=list::$(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) | grep -e .iuml -e .puml | xargs echo | awk '{if($0 ~ ".iuml"){print "**/*.puml"}else{print $0}}')
