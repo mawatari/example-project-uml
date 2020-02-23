@@ -18,6 +18,11 @@ skinparam Title {
   FontSize 16
 }
 
+skinparam Actor {
+  BackgroundColor #eeeeee
+  BorderColor #999999
+}
+
 skinparam note {
   FontStyle bold
   FontColor #ffffff
