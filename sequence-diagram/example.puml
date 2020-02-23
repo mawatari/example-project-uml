@@ -1,5 +1,5 @@
 @startuml
-!include config/autoload.iuml
+!include ../config/autoload.iuml
 
 actor User
 participant "First Class" as A
