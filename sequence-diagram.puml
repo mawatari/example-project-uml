@@ -2,7 +2,7 @@
 !include config/autoload.iuml
 
 actor User
-participant "1.First Class" as A
+participant "First Class" as A
 participant "Second Class" as B
 participant "Last Class" as C
 
