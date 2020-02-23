@@ -32,7 +32,7 @@ jobs:
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
         with:
-          args: '-svg ${{ steps.changed_files.outputs.iuml_list }}'
+          args: '-svg *.puml'
         if: steps.changed_files.outputs.iuml_list
       - name: Commit files
         run: |
