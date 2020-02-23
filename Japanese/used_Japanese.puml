@@ -1,5 +1,5 @@
 @startuml
-!include config/autoload.iuml
+!include ../config/autoload.iuml
 
 start
 if (条件1) then (はい)
