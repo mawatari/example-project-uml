@@ -1,0 +1,19 @@
+@startuml
+!include ../config/autoload.iuml
+
+start
+if (条件10) then (はい)
+  :メッセージ1;
+elseif (条件2) then (はい)
+  :メッセージ2;
+  stop
+elseif (条件3) then (はい)
+  :メッセージ3;
+elseif (条件4) then (はい)
+  :メッセージ4;
+else (該当なし)
+  :メッセージ5;
+endif
+stop
+
+@enduml
