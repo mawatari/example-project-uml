@@ -1,3 +1,3 @@
-right header confidential
+right header CONFIDENTIAL
 right footer PROJECT_OWNER\nLast modified: %date("yyyy/MM/dd HH:mm:ss z")
 title PROJECT_NAME %filename()
