@@ -24,6 +24,8 @@ jobs:
         id: changed_files
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
+        env:
+          TZ: Asia/Tokyo
         with:
           args: '-svg ${{ steps.changed_files.outputs.list }}'
         if: steps.changed_files.outputs.list
