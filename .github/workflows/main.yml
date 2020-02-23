@@ -26,21 +26,21 @@ jobs:
           LANGUAGE=ja_JP.ja
           LC_ALL=ja_JP.UTF-8
           export LANG
-          export LANGAGE
+          export LANGUAGE
           export LC_ALL
           locale
       - name: Extract the targets
         run: |
           echo ::set-output name=list::$(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) | grep -e .iuml -e .puml | xargs echo | awk '{if($0 ~ ".iuml"){print "**/*.puml"}else{print $0}}')
           echo $(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) | grep -e .iuml -e .puml | xargs echo | awk '{if($0 ~ ".iuml"){print "**/*.puml"}else{print $0}}')
-          locale -a
+          locale
         id: changed_files
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
         env:
           TZ: Asia/Tokyo
           LANG: ja_JP.UTF-8
-          LANGAGE: ja_JP.ja
+          LANGUAGE: ja_JP.ja
           LC_ALL: ja_JP.UTF-8
         with:
           args: '-svg ${{ steps.changed_files.outputs.list }}'
