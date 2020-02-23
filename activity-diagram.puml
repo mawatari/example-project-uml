@@ -4,7 +4,7 @@
 start
 if (condition AaA) then (yes)
   :Text 1;
-elseif (condition B) then (yes)
+elseif (condition BbB) then (yes)
   :Text 2;
   stop
 elseif (condition C) then (yes)

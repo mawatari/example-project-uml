@@ -2,9 +2,9 @@
 !include config/autoload.iuml
 
 actor User
-participant "First Class" as A
-participant "Second Class" as B
-participant "Last Class" as C
+participant "1.First Class" as A
+participant "2.Second Class" as B
+participant "3.Last Class" as C
 
 User -> A: DoWork
 activate A
