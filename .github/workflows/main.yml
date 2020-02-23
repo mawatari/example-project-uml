@@ -33,6 +33,7 @@ jobs:
         uses: Timmy/plantuml-action@5f5f57e
         env:
           TZ: Asia/Tokyo
+          LANG: ja_JP.UTF-8
         with:
           args: '-svg ${{ steps.changed_files.outputs.list }}'
         if: steps.changed_files.outputs.list
