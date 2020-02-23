@@ -2,7 +2,7 @@
 !include ../config/autoload.iuml
 
 start
-if (条件1) then (はい)
+if (条件10) then (はい)
   :メッセージ1;
 elseif (条件2) then (はい)
   :メッセージ2;
