@@ -20,20 +20,13 @@ jobs:
         with:
           fetch-depth: unshallow
       - name: Extract changed files
-        run: | 
-          echo ::set-output name=puml_list::$(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) | grep .puml)
-          echo ::set-output name=iuml_list::$(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) | grep .iuml)
+        run: echo ::set-output name=list::$(git diff --stat --name-only $(git log --committer="github-actions" -1 --pretty=%h) $(git rev-parse --short HEAD) |  | grep -e .iuml -e .puml | xargs echo | awk '{if($0 ~ ".iuml"){print "*.puml"}else{print $0}}')
         id: changed_files
       - name: Process diagrams
         uses: Timmy/plantuml-action@5f5f57e
         with:
-          args: '-svg ${{ steps.changed_files.outputs.puml_list }}'
-        if: steps.changed_files.outputs.puml_list
-      - name: Process diagrams
-        uses: Timmy/plantuml-action@5f5f57e
-        with:
-          args: '-svg *.puml'
-        if: steps.changed_files.outputs.iuml_list
+          args: '-svg ${{ steps.changed_files.outputs.list }}'
+        if: steps.changed_files.outputs.list
       - name: Commit files
         run: |
           git config --local user.email "github-actions@users.noreply.github.com"
