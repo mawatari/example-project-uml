@@ -1,9 +1,9 @@
 skinparam {
-  BoxPadding 5
-  ParticipantPadding 10
+  Shadowing false
+  RoundCorner 4
 }
-skinparam default {
-  FontColor #555555
+skinparam Default {
+  FontColor #505050
   FontSize 14
 }
 skinparam Header {
@@ -20,17 +20,27 @@ skinparam Title {
 
 skinparam Actor {
   BackgroundColor #eeeeee
-  BorderColor #999999
+  BorderColor #505050
 }
-
-skinparam note {
+skinparam Arrow {
+  Color #000000
+}
+skinparam Box {
+  Padding 10
+}
+skinparam Participant {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+  Padding 10
+}
+skinparam Note {
   FontStyle bold
   FontColor #ffffff
   BackgroundColor #7f8c8d
   BorderColor #7f8c8d
 }
 
-skinparam activity {
+skinparam Activity {
   ArrowColor #000000
   BackgroundColor #eeeeee
   BorderColor #999999
@@ -40,4 +50,11 @@ skinparam activity {
 
   DiamondBackgroundColor #eeeeee
   DiamondBorderColor #999999
+}
+skinparam Sequence {
+  ArrowThickness 2
+  BoxBackgroundColor #DDDDDD
+  BoxBorderColor #999999
+  LifeLineBorderColor #000000
+  ReferenceBorderColor #000000
 }
