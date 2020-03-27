@@ -1,6 +1,6 @@
 skinparam {
-  Shadowing false
   RoundCorner 4
+  Shadowing false
 }
 skinparam Default {
   FontColor #505050
@@ -34,10 +34,10 @@ skinparam Participant {
   Padding 10
 }
 skinparam Note {
-  FontStyle bold
-  FontColor #ffffff
   BackgroundColor #7f8c8d
   BorderColor #7f8c8d
+  FontStyle bold
+  FontColor #ffffff
 }
 
 skinparam Activity {
